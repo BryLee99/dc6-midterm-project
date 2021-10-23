@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="assets/codmw.jpg" alt="">
+                </div>
+                <div class="col-md-6">
+                    <h3>Call Of Duty Modern Warfare</h3>
+                    <p>The campaign follows a CIA officer and British SAS forces as they team up with rebels from the fictional country of Urzikstan, combating together against Russian forces who have invaded the country. The game's Special Ops mode features cooperative play missions that follow up the campaign's story.</p>
+                     <div>
+                        <span  *ngFor="let num of Array; let i = index">
+                            <span *ngIf="rating > i; else elseBlock">
+                                <button class="btn selected" (click)="onClick(i+1)"></button>
+                            </span>
+                            <ng-template #elseBlock>
+                                <button class="btn unselected" (click)="onClick(i+1)"></button>
+                            </ng-template>
+                        </span>
+                    </div>
+                    <h1>Rate: {{rating}} of 5</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
